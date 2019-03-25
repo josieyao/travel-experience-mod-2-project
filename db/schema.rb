@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2019_03_25_191610) do
     t.string "destination_address"
     t.string "airline"
     t.string "airport_code"
-    t.integer "flight_number"
+    t.string "flight_number"
     t.string "gate_number"
     t.string "seat_number"
     t.string "departure_date"
