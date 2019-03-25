@@ -1,0 +1,41 @@
+/* universal */
+@keyframes animatedBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+@-webkit-keyframes animatedBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+@-ms-keyframes animatedBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+@-moz-keyframes animatedBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+body {
+    background: url("https://html5up.net/uploads/demos/aerial/assets/css/images/bg.jpg") no-repeat fixed;
+    background-size: cover;
+    animation: animatedBackground 90s linear infinite;
+    -ms-animation: animatedBackground 90s linear infinite;
+    -moz-animation: animatedBackground 90s linear infinite;
+    -webkit-animation: animatedBackground 90s linear infinite;
+}
