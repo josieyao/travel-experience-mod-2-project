@@ -37,7 +37,8 @@ ActiveRecord::Schema.define(version: 2019_03_25_191610) do
     t.integer "flight_number"
     t.string "gate_number"
     t.string "seat_number"
-    t.text "date"
+    t.string "departure_date"
+    t.string "return_date"
     t.integer "user_id"
     t.integer "receiver_id"
     t.datetime "created_at", null: false

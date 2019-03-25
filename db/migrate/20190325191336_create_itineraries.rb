@@ -8,7 +8,8 @@ class CreateItineraries < ActiveRecord::Migration[5.2]
       t.integer :flight_number
       t.string :gate_number
       t.string :seat_number
-      t.text :date
+      t.string :departure_date
+      t.string :return_date
       t.integer :user_id
       t.integer :receiver_id
 
