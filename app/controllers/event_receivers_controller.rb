@@ -1,0 +1,2 @@
+class EventReceiversController < ApplicationController
+end
