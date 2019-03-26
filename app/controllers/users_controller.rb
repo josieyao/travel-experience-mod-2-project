@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
 
+  #before_action :require_login
+
   def index
+    @users = User.all
     @user = User.find(session[:current_user_id])
   end
 
@@ -9,12 +12,19 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+     @user = User.new
   end
 
   def create
-    @user = User.create(user_params)
-    redirect_to user_path(@user)
+    @user = User.new(user_params)
+
+    if @user.valid?
+      @user.save
+      redirect_to root_path
+    else
+      @user.errors.full_messages
+      redirect_to new_user_path(@user)
+    end
   end
 
   def edit
@@ -33,7 +43,11 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password_digest)
+    params.require(:user).permit(:first_name, :last_name, :email, :password)
   end
+
+  #def require_login
+  #  return head(:forbidden) unless session.include? :user_id
+  #end
 
 end
