@@ -17,4 +17,11 @@ class SessionsController < ApplicationController
       redirect_to '/sessions/new'
   end
 
+
+  def destroy
+    session.delete :email
+    @current_user = nil
+
+    redirect_to new_session_path
+  end
 end
