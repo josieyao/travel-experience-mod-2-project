@@ -1,0 +1,34 @@
+<div style="text-align: center">
+<h1>Edit Account</h1>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col">
+        <%= form_with model: @user do | form | %>
+
+        <div class="form-group col-lg-6">
+          <%= form.label "First Name" %>
+          <%= form.text_field :first_name, class: "form-control" %>
+        </div>
+
+        <div class="form-group col-lg-6">
+          <%= form.label "Last Name" %>
+          <%= form.text_field :last_name, class: "form-control" %>
+        </div>
+
+        <div class="form-group col-lg-6">
+          <%= form.label "Email" %>
+          <%= form.email_field :email, class: "form-control" %>
+        </div>
+
+        <div class="form-group col-lg-6">
+          <%= form.label "Password" %>
+          <%= form.password_field :password, class: "form-control" %>
+        </div>
+        <div style="text-align: center">
+        <%= form.submit "Edit Account", class: "btn btn-info btn-lg"%>
+        </div>
+        <% end %>
+      </div>
+    </div>
+</div>
