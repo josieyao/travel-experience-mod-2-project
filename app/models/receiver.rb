@@ -6,4 +6,8 @@ class Receiver < ApplicationRecord
 
   validates :first_name, :last_name, presence: true
   validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
+
+  def to_s
+    self.first_name + " " + self.last_name
+    
 end

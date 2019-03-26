@@ -30,6 +30,8 @@ class ReceiversController < ApplicationController
   def delete
   end
 
+  private
+
   def receiver_params
     params.require(:receiver).permit(:first_name, :last_name, :email)
   end
