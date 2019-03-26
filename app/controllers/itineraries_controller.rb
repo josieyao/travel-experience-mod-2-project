@@ -29,6 +29,8 @@ class ItinerariesController < ApplicationController
   def delete
   end
 
+  private
+
   def itinerary_params
     params.require(:itinerary).permit(:destination_name, :destination_address, :airline, :airport_code, :flight_number, :gate_number, :seat_number, :departure_date, :return_date, :user_id, :receiver_id)
   end

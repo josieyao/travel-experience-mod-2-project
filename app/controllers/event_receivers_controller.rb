@@ -29,6 +29,8 @@ class EventReceiversController < ApplicationController
   def delete
   end
 
+  private
+
   def event_receiver_params
     params.require(:event_receiver).permit(:event_id, :receiver_id)
   end
