@@ -1,6 +1,7 @@
 class Itinerary < ApplicationRecord
   belongs_to :user, required: false
   belongs_to :receiver, required: false
+  has_many :events
 
   validates :destination_name, :destination_address, :airline, :airport_code, :flight_number, :gate_number, :seat_number, presence: true
 

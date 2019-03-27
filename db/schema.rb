@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_03_25_191610) do
     t.string "description"
     t.text "date"
     t.text "time"
+    t.integer "itinerary_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
