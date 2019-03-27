@@ -9,7 +9,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(session[:current_user_id])
-    @itinerary = Itinerary.where(user_id: @user.id)
   end
 
   def new

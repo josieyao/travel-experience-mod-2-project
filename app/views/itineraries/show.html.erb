@@ -1,0 +1,69 @@
+<div style="text-align: center">
+  <h1><%= @itinerary.destination_name %> Itinerary</h1>
+  <br>
+
+    <div>
+      <h4>Destination Name</h4>
+        <%= @itinerary.destination_name%>
+    </div>
+    <br>
+
+    <div>
+      <h4>Destination Address</h4>
+        <%= @itinerary.destination_address%>
+    </div>
+    <br>
+
+    <div>
+      <h4>Airline</h4>
+        <%= @itinerary.airline%>
+    </div>
+    <br>
+
+    <div>
+      <h4>Airport Code</h4>
+        <%= @itinerary.airport_code%>
+    </div>
+    <br>
+
+    <div>
+      <h4>Flight Number</h4>
+        <%= @itinerary.flight_number%>
+    </div>
+    <br>
+
+    <div>
+      <h4>Gate Number</h4>
+        <%= @itinerary.gate_number%>
+    </div>
+    <br>
+
+    <div>
+      <h4>Seat Number</h4>
+        <%= @itinerary.seat_number%>
+    </div>
+    <br>
+
+    <div>
+      <h4>Departure Date</h4>
+        <%= @itinerary.departure_date%>
+    </div>
+    <br>
+
+    <div>
+      <h4>Return Date</h4>
+        <%= @itinerary.return_date%>
+    </div>
+    <br>
+
+    <div>
+      <h4>Receiver</h4>
+        <%= @receiver.to_s%>
+    </div>
+    <br>
+
+    <div>
+      <button type="button" class="btn btn-info btn-lg"><%= link_to "Edit Itinerary", edit_itinerary_path(@itinerary)%><br>
+    </div>
+    <br>
+</div>

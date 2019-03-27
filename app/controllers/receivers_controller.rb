@@ -1,11 +1,11 @@
 class ReceiversController < ApplicationController
 
   def index
-    @receiver = Receiver.find(session[:current_receiver_id])
+    @receiver = Receiver.find(params[:id])
   end
 
   def show
-    @receiver = Receiver.find(session[:current_receiver_id])
+    @receiver = Receiver.find(params[:id])
   end
 
   def new
@@ -18,11 +18,11 @@ class ReceiversController < ApplicationController
   end
 
   def edit
-    @receiver = Receiver.find(session[:current_receiver_id])
+    @receiver = Receiver.find(params[:id])
   end
 
   def update
-    @receiver = Receiver.find(session[:current_receiver_id])
+    @receiver = Receiver.find(params[:id])
     @receiver.update(receiver_params)
     redirect_to receiver_path(@receiver)
   end
