@@ -26,7 +26,8 @@ class ItinerariesController < ApplicationController
     redirect_to itinerary_path(@itinerary)
   end
 
-  def delete
+  def destroy
+    
   end
 
   private

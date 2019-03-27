@@ -1,7 +1,8 @@
+<%= render "navbar" %>
 <h2><%= "Welcome back, #{@user.first_name}" %></h2>
 
 
 <%= link_to "Itineraries" do %>
   <strong><%= @itinerary.name %></strong><br>
 <% end %>
-<button type="button" class="btn btn-primary"><%= link_to "Logout", logout_path %></button>
+<%= link_to "Logout", logout_path%>

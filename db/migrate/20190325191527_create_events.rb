@@ -6,6 +6,7 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.string :description
       t.text :date
       t.text :time
+      t.integer :itinerary_id
 
       t.timestamps
     end
