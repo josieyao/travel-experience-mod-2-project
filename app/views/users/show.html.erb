@@ -2,10 +2,8 @@
 <br>
 <h4>My Itineraries</h4>
 <% @user.itineraries.each do |itinerary| %>
-  <strong><%= link_to itinerary.destination_name, itinerary %></strong>
-
-<%= link_to "Itineraries" do %>
-  <strong><%= @itinerary.name %></strong><br>
+  <strong><%= link_to itinerary.destination_name, itinerary %></strong><br>
 <% end %>
+<br>
 
 <button type="button" class="btn btn-primary"><%= link_to "Logout", logout_path %></button>
