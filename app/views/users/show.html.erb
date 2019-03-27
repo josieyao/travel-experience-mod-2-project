@@ -6,4 +6,10 @@
 <% end %>
 <br>
 
-<button type="button" class="btn btn-primary"><%= link_to "Logout", logout_path %></button>
+<div>
+  <button type="button" class="btn btn-primary"><%= link_to "Edit User Account", edit_user_path(@user)%><br>
+</div>
+
+<div>
+  <button type="button" class="btn btn-primary"><%= link_to "Logout", logout_path %></button><br>
+</div>
