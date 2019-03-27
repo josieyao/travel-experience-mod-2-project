@@ -14,6 +14,7 @@ class ReceiversController < ApplicationController
 
   def create
     @receiver = Receiver.create(receiver_params)
+    Itinerary.find(session[:current_itinerary_id]).update(receiver: @receiver)
     redirect_to receiver_path(@receiver)
   end
 
