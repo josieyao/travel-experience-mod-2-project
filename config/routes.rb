@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   root 'sessions#new'
-  '/logout'
+  get 'logout', to: 'sessions#destroy'
 end
