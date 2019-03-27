@@ -1,10 +1,10 @@
 class ItinerariesController < ApplicationController
   def index
-    @itinerary = Itinerary.find(session[:current_itinerary_id])
+    @itinerary = Itinerary.find(params[:id])
   end
 
   def show
-    @itinerary = Itinerary.find(session[:current_itinerary_id])
+    @itinerary = Itinerary.find(params[:id])
   end
 
   def new
@@ -17,11 +17,11 @@ class ItinerariesController < ApplicationController
   end
 
   def edit
-    @itinerary = Itinerary.find(session[:current_itinerary_id])
+    @itinerary = Itinerary.find(params[:id])
   end
 
   def update
-    @itinerary = Itinerary.find(session[:current_itinerary_id])
+    @itinerary = Itinerary.find(params[:id])
     @itinerary.update(itinerary_params)
     redirect_to itinerary_path(@itinerary)
   end
