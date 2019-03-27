@@ -1,0 +1,85 @@
+<div style="text-align: center">
+<h1><%= @itinerary.destination_name %> Itinerary</h1>
+</div>
+
+<br>
+<div style="text-align: center">
+<u><h4>Receiver's Information</h4></u>
+</div>
+
+<div class="form-group col-lg-6">
+  <div style="text-align: center">
+    <FONT COLOR="0066ff"><h4><%= @receiver.to_s %></h4></FONT>
+    <FONT COLOR="0066ff"><h4><%= @receiver.email %></h4></FONT>
+  </div>
+</div>
+
+<div style="text-align: center">
+  <button type="button" class="btn btn-info"><%= link_to "Edit Receiver", edit_receiver_path(@receiver.id)%><br>
+</div>
+<br>
+
+
+<div class="container">
+  <div class="row">
+      <div class="col">
+        <%= form_with model: @itinerary do | form | %>
+
+        <div>
+          <%= form.label "Destination Name"%>
+          <%= form.text_field :destination_name, class: "form-control" %>
+        </div>
+
+        <div>
+          <%= form.label "Address" %>
+          <%= form.text_field :destination_address, class: "form-control" %>
+        </div>
+
+        <br>
+        <div style="text-align: center">
+          <h3>Ticket Information</h3>
+        </div>
+
+        <div>
+          <%= form.label "Airline" %>
+          <%= form.text_field :airline, class: "form-control" %>
+        </div>
+
+        <div>
+          <%= form.label "Airport Code" %>
+          <%= form.text_field :airport_code, class: "form-control" %>
+        </div>
+
+        <div>
+          <%= form.label "Flight Number" %>
+          <%= form.text_field :flight_number, class: "form-control" %>
+        </div>
+
+        <div>
+          <%= form.label "Gate Number" %>
+          <%= form.text_field :gate_number, class: "form-control" %>
+        </div>
+
+        <div>
+          <%= form.label "Seat Number" %>
+          <%= form.text_field :seat_number, class: "form-control" %>
+        </div>
+
+        <div>
+          <%= form.label "Departure Date" %>
+          <%= form.text_field :departure_date, class: "form-control", type: "date" %>
+        </div>
+
+        <div>
+          <%= form.label "Return Date" %>
+          <%= form.text_field :return_date, value: :return_date, class: "form-control", type: "date"%>
+        </div>
+
+        <br>
+        <div style="text-align: center">
+        <%= form.submit "Edit Itinerary", class: "btn btn-info btn-lg"%>
+        </div>
+        <% end %>
+      </div>
+    </div>
+</div>
