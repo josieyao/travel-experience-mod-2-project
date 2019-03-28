@@ -8,6 +8,7 @@ class EventsController < ApplicationController
   end
 
   def new
+    @itineraries = Itinerary.all
     @event = Event.new
   end
 
@@ -32,6 +33,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :address, :description, :date, :time)
+    params.require(:event).permit(:name, :address, :description, :date, :time, :itinerary_id)
   end
 end

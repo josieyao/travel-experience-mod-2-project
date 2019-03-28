@@ -6,6 +6,7 @@ class ItinerariesController < ApplicationController
 
   def show
     @itinerary = Itinerary.find(params[:id])
+    session[:current_itinerary_id] = @itinerary.id
     @user = User.find(session[:current_user_id])
     @receiver = @itinerary.receiver
   end

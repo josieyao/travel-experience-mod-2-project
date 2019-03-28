@@ -44,6 +44,10 @@
           <%= form.label "Time" %>
           <%= form.text_field :time, class: "form-control", type: "time" %>
         </div>
+        <div class="form-group col-lg-6">
+          <%= form.label "Destination" %>
+          <%= form.collection_select :itinerary_id, @itineraries, :id, :destination_name, class: "form-control" %>
+        </div>
         <div style="text-align: center">
         <%= form.submit "Submit", class: "btn btn-info btn-lg"%>
         </div>

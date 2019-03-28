@@ -9,6 +9,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(session[:current_user_id])
+    unless @user.id == params[:id].to_i
+      redirect_to user_path(@user)
+    end
   end
 
   def new
