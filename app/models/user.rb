@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_many :itineraries
+  has_many :event_users
+  has_many :events, through: :event_users
   has_many :receivers, through: :itineraries
 
   validates :first_name, :last_name, presence: true, length: { maximum: 50 }

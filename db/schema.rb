@@ -10,13 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_25_191610) do
+ActiveRecord::Schema.define(version: 2019_03_25_191612) do
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "itinerary_id"
+    t.integer "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_bookings_on_event_id"
+    t.index ["itinerary_id"], name: "index_bookings_on_itinerary_id"
+  end
 
   create_table "event_receivers", force: :cascade do |t|
     t.integer "event_id"
     t.integer "receiver_id"
+    t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_receivers_on_event_id"
+    t.index ["receiver_id"], name: "index_event_receivers_on_receiver_id"
+  end
+
+  create_table "event_users", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_users_on_event_id"
+    t.index ["user_id"], name: "index_event_users_on_user_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -25,7 +46,6 @@ ActiveRecord::Schema.define(version: 2019_03_25_191610) do
     t.string "description"
     t.text "date"
     t.text "time"
-    t.integer "itinerary_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -44,6 +64,8 @@ ActiveRecord::Schema.define(version: 2019_03_25_191610) do
     t.integer "receiver_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["receiver_id"], name: "index_itineraries_on_receiver_id"
+    t.index ["user_id"], name: "index_itineraries_on_user_id"
   end
 
   create_table "receivers", force: :cascade do |t|

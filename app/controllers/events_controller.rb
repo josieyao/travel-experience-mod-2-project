@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @event = Event.find(session[:current_event_id])
+    @all = Event.all
   end
 
   def show
