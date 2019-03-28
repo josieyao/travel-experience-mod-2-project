@@ -1,6 +1,14 @@
+<%= render "navbar" %>
+
 <div style="text-align: center">
   <h1><%= @itinerary.destination_name %> Itinerary</h1>
   <br>
+
+    <div>
+      <h4>Receiver</h4>
+        <%= @receiver.to_s%>
+    </div>
+    <br>
 
     <div>
       <h4>Destination Name</h4>
@@ -11,6 +19,18 @@
     <div>
       <h4>Destination Address</h4>
         <%= @itinerary.destination_address%>
+    </div>
+    <br>
+
+    <div>
+      <h4>Departure Date</h4>
+        <%= @itinerary.departure_date%>
+    </div>
+    <br>
+
+    <div>
+      <h4>Return Date</h4>
+        <%= @itinerary.return_date%>
     </div>
     <br>
 
@@ -41,29 +61,6 @@
     <div>
       <h4>Seat Number</h4>
         <%= @itinerary.seat_number%>
-    </div>
-    <br>
-
-    <div>
-      <h4>Departure Date</h4>
-        <%= @itinerary.departure_date%>
-    </div>
-    <br>
-
-    <div>
-      <h4>Return Date</h4>
-        <%= @itinerary.return_date%>
-    </div>
-    <br>
-
-    <div>
-      <h4>Receiver</h4>
-        <%= @receiver.to_s%>
-    </div>
-    <br>
-
-    <div>
-      <button type="button" class="btn btn-info btn-lg"><%= link_to "Edit Itinerary", edit_itinerary_path(@itinerary)%><br>
     </div>
     <br>
 </div>
