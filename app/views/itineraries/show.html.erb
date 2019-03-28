@@ -25,20 +25,8 @@
         <td><%= @itinerary.destination_address%></td>
       </tr>
       <tr>
-        <td><strong>Departure Date</strong></td>
-        <td><%= @itinerary.departure_date%></td>
-      </tr>
-      <tr>
-        <td><strong>Return Date</strong></td>
-        <td><%= @itinerary.return_date%></td>
-      </tr>
-      <tr>
         <td><strong>Airline</strong></td>
         <td><%= @itinerary.airline%></td>
-      </tr>
-      <tr>
-        <td><strong>Airport Code</strong></td>
-        <td><%= @itinerary.airport_code%></td>
       </tr>
       <tr>
         <td><strong>Flight Number</strong></td>
@@ -51,6 +39,30 @@
       <tr>
         <td><strong>Seat Number</strong></td>
         <td><%= @itinerary.seat_number%></td>
+      </tr>
+      <tr>
+        <td><strong>Departure Airport Code</strong></td>
+        <td><%= @itinerary.departure_airport_code%></td>
+      </tr>
+      <tr>
+        <td><strong>Departure Date</strong></td>
+        <td><%= @itinerary.departure_date%></td>
+      </tr>
+      <tr>
+        <td><strong>Departure Flight Time</strong></td>
+        <td><%= @itinerary.departure_flight_time%></td>
+      </tr>
+      <tr>
+        <td><strong>Return Airport Code</strong></td>
+        <td><%= @itinerary.return_airport_code%></td>
+      </tr>
+      <tr>
+        <td><strong>Return Date</strong></td>
+        <td><%= @itinerary.return_date%></td>
+      </tr>
+      <tr>
+        <td><strong>Return Flight Time</strong></td>
+        <td><%= @itinerary.return_flight_time%></td>
       </tr>
   </tbody>
 </table>

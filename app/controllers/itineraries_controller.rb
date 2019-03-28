@@ -41,7 +41,7 @@ class ItinerariesController < ApplicationController
   private
 
   def itinerary_params
-    params.require(:itinerary).permit(:destination_name, :destination_address, :airline, :airport_code, :flight_number, :gate_number, :seat_number, :departure_date, :return_date, :user_id, :receiver_id)
+    params.require(:itinerary).permit(:destination_name, :destination_address, :airline, :flight_number, :gate_number, :seat_number, :departure_airport_code, :departure_date, :departure_flight_time, :return_airport_code, :return_date, :return_flight_time, :user_id, :receiver_id)
   end
 
 end

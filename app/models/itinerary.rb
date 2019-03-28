@@ -4,8 +4,6 @@ class Itinerary < ApplicationRecord
   has_many :bookings
   has_many :events, through: :bookings
 
-  validates :destination_name, :destination_address, :airline, :airport_code, :flight_number, :gate_number, :seat_number, presence: true
-
-  validates_format_of :departure_date, :return_date, :with => /\d{4}\/\d{2}\/\d{2}/, :message => "Date must be in the following format: yyyy/mm/dd"
+  validates :destination_name, :destination_address, :airline, :flight_number, :gate_number, :seat_number, :departure_airport_code, :departure_date, :departure_flight_time, :return_airport_code, :return_date, :return_flight_time, presence: true
 
 end
