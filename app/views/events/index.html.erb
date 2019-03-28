@@ -1,0 +1,21 @@
+<%= render "navbar" %>
+<div class="container">
+  <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @all.each_with_index do |e, i| %>
+      <tr>
+        <th scope="row"><%= i + 1 %></th>
+        <td><%= link_to e.name, event_path(e), style: "color: black" %></td>
+        <td><%= e.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

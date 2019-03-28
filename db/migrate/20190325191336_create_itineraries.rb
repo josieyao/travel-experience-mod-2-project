@@ -10,8 +10,8 @@ class CreateItineraries < ActiveRecord::Migration[5.2]
       t.string :seat_number
       t.string :departure_date
       t.string :return_date
-      t.integer :user_id
-      t.integer :receiver_id
+      t.belongs_to :user
+      t.belongs_to :receiver
 
       t.timestamps
     end
