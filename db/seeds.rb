@@ -19,7 +19,22 @@ josie = User.create(first_name: 'Josie', last_name: 'Yap', email: 'josie@gmail.c
 
 cory = Receiver.create(first_name: 'Cory', last_name: 'Harpie', email: 'cory@gmail.com')
 
-hawaii_itinerary = Itinerary.create(destination_name: 'Hawaii', destination_address: '1200 Hawaii Street, Honolulu, HI 96814', airline: 'Hawaiian Airlines', airport_code: 'HNL', flight_number: 'H200', gate_number: '1A', seat_number: '15B', departure_date: '2019/04/01', return_date: '2019/04/03', user: josie, receiver: cory)
+hawaii_itinerary = Itinerary.create(
+  destination_name: 'Hawaii',
+  destination_address: '1200 Hawaii Street, Honolulu, HI 96814',
+  airline: 'Hawaiian Airlines',
+  flight_number: 'H200',
+  gate_number: '1A',
+  seat_number: '15B',
+  departure_airport_code: 'LAX',
+  departure_date: '2019/04/01',
+  departure_flight_time: '7:00AM',
+  return_airport_code: 'HNL',
+  return_date: '2019/04/03',
+  return_flight_time: '8:00PM',
+  user: josie,
+  receiver: cory
+)
 
 aloha_luau = Event.create(name: 'Aloha Luau', address: '4300 Maui Rd, Honolulu, HI 96814', description: 'Enjoy an relaxing luau with free drinks and food', date: '2019/04/02', time: '3:00PM')
 
@@ -37,7 +52,22 @@ sam = User.create(first_name: 'Sam', last_name: 'Smith', email: 'sammie@gmail.co
 
 jane = Receiver.create(first_name: 'Jane', last_name: 'Smith', email: 'jane@gmail.com')
 
-cali_itinerary = Itinerary.create(destination_name: 'California', destination_address: '200 Rodeo Drive, Beverly Hills, CA 90210', airline: 'Delta Airlines', airport_code: 'LAX', flight_number: 'DL100', gate_number: '11A', seat_number: '10C', departure_date: '2019/05/01', return_date: '2019/05/02', user: sam, receiver: jane)
+cali_itinerary = Itinerary.create(
+  destination_name: 'California',
+  destination_address: '200 Rodeo Drive, Beverly Hills, CA 90210',
+  airline: 'Delta Airlines',
+  flight_number: 'DL100',
+  gate_number: '11A',
+  seat_number: '10C',
+  departure_airport_code: 'IAH',
+  departure_date: '2019/05/01',
+  departure_flight_time: '9:00AM',
+  return_airport_code: 'LAX',
+  return_date: '2019/05/02',
+  return_flight_time: '9:00PM',
+  user: sam,
+  receiver: jane
+)
 
 hollywood_tour = Event.create(name: 'Hollywood Walk of Fame Tour', address: '700 Hollywood Drive, Hollywood, CA 90211', description: 'Find the hand prints of your favorite celebrities!', date: '2019/05/02', time: '12:00PM')
 

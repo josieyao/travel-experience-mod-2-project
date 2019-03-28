@@ -46,11 +46,6 @@
         </div>
 
         <div>
-          <%= form.label "Airport Code" %>
-          <%= form.text_field :airport_code, class: "form-control" %>
-        </div>
-
-        <div>
           <%= form.label "Flight Number" %>
           <%= form.text_field :flight_number, class: "form-control" %>
         </div>
@@ -66,13 +61,33 @@
         </div>
 
         <div>
+          <%= form.label "Departure Airport Code" %>
+          <%= form.text_field :departure_airport_code, class: "form-control" %>
+        </div>
+
+        <div>
           <%= form.label "Departure Date" %>
           <%= form.text_field :departure_date, class: "form-control", type: "date" %>
         </div>
 
         <div>
+          <%= form.label "Departure Flight Time" %>
+          <%= form.text_field :departure_flight_time, class: "form-control" %>
+        </div>
+
+        <div>
+          <%= form.label "Return Airport Code" %>
+          <%= form.text_field :return_airport_code, class: "form-control" %>
+        </div>
+
+        <div>
           <%= form.label "Return Date" %>
           <%= form.text_field :return_date, value: :return_date, class: "form-control", type: "date"%>
+        </div>
+
+        <div>
+          <%= form.label "Return Flight Time" %>
+          <%= form.text_field :return_flight_time, class: "form-control" %>
         </div>
 
         <br>
