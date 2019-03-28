@@ -1,5 +1,5 @@
 <div class="topnav">
-  <%= link_to "Home", user_path(@user), class: "active"%>
+  <%= link_to "Home", user_path(current_user), class: "active"%>
   <a href="/logout">Log Out</a>
   <%= link_to "View Events", events_path(@event) %>
   <%= link_to "Edit Receiver", edit_receiver_path(@receiver) %>

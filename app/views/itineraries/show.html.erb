@@ -1,66 +1,57 @@
 <%= render "navbar" %>
-
-<div style="text-align: center">
-  <h1><%= @itinerary.destination_name %> Itinerary</h1>
-  <br>
-
-    <div>
-      <h4>Receiver</h4>
-        <%= @receiver.to_s%>
-    </div>
+<div class="container">
+  <div style="text-align: center">
     <br>
-
-    <div>
-      <h4>Destination Name</h4>
-        <%= @itinerary.destination_name%>
-    </div>
-    <br>
-
-    <div>
-      <h4>Destination Address</h4>
-        <%= @itinerary.destination_address%>
-    </div>
-    <br>
-
-    <div>
-      <h4>Departure Date</h4>
-        <%= @itinerary.departure_date%>
-    </div>
-    <br>
-
-    <div>
-      <h4>Return Date</h4>
-        <%= @itinerary.return_date%>
-    </div>
-    <br>
-
-    <div>
-      <h4>Airline</h4>
-        <%= @itinerary.airline%>
-    </div>
-    <br>
-
-    <div>
-      <h4>Airport Code</h4>
-        <%= @itinerary.airport_code%>
-    </div>
-    <br>
-
-    <div>
-      <h4>Flight Number</h4>
-        <%= @itinerary.flight_number%>
-    </div>
-    <br>
-
-    <div>
-      <h4>Gate Number</h4>
-        <%= @itinerary.gate_number%>
-    </div>
-    <br>
-
-    <div>
-      <h4>Seat Number</h4>
-        <%= @itinerary.seat_number%>
-    </div>
-    <br>
+    <h1><%= @itinerary.destination_name %> Itinerary</h1>
+  </div>
+  <table class="table table-sm table-hover">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><strong>Reciever</strong></td>
+        <td><%= link_to @receiver.to_s, receiver_path(@receiver), style: "color: black"%></td>
+      </tr>
+      <tr>
+        <td><strong>Destination</strong></td>
+        <td><%= @itinerary.destination_name%></td>
+      </tr>
+      <tr>
+        <td><strong>Address</strong></td>
+        <td><%= @itinerary.destination_address%></td>
+      </tr>
+      <tr>
+        <td><strong>Departure Date</strong></td>
+        <td><%= @itinerary.departure_date%></td>
+      </tr>
+      <tr>
+        <td><strong>Return Date</strong></td>
+        <td><%= @itinerary.return_date%></td>
+      </tr>
+      <tr>
+        <td><strong>Airline</strong></td>
+        <td><%= @itinerary.airline%></td>
+      </tr>
+      <tr>
+        <td><strong>Airport Code</strong></td>
+        <td><%= @itinerary.airport_code%></td>
+      </tr>
+      <tr>
+        <td><strong>Flight Number</strong></td>
+        <td><%= @itinerary.flight_number%></td>
+      </tr>
+      <tr>
+        <td><strong>Gate Number</strong></td>
+        <td><%= @itinerary.gate_number%></td>
+      </tr>
+      <tr>
+        <td><strong>Seat Number</strong></td>
+        <td><%= @itinerary.seat_number%></td>
+      </tr>
+  </tbody>
+</table>
 </div>
