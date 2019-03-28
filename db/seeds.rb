@@ -30,7 +30,7 @@ hawaii_itinerary = Itinerary.create(
   departure_date: '2019/04/01',
   departure_flight_time: '7:00AM',
   return_airport_code: 'HNL',
-  return_date: '2019/04/03',
+  return_date: '04/03/2019',
   return_flight_time: '8:00PM',
   user: josie,
   receiver: cory
@@ -63,7 +63,7 @@ cali_itinerary = Itinerary.create(
   departure_date: '2019/05/01',
   departure_flight_time: '9:00AM',
   return_airport_code: 'LAX',
-  return_date: '2019/05/02',
+  return_date: '05/02/2019',
   return_flight_time: '9:00PM',
   user: sam,
   receiver: jane

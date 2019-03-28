@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :receivers
   resources :users
   resources :sessions
+  resources :event_users
   root 'sessions#new'
   get 'logout', to: 'sessions#destroy'
 end

@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :itineraries
-  has_many :event_users
-  has_many :events, through: :event_users
+  has_many :event_selfs
+  has_many :events, through: :event_selfs
   has_many :receivers, through: :itineraries
 
   validates :first_name, :last_name, presence: true, length: { maximum: 50 }
@@ -16,5 +16,11 @@ class User < ApplicationRecord
   def to_s
     self.first_name + " " + self.last_name
   end
+
+  def stolen_identity?(params)
+    unless self.id == params.to_i
+    end
+  end
+
 
 end
