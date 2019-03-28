@@ -14,7 +14,7 @@
   <tbody>
       <tr>
         <td><strong>Reciever</strong></td>
-        <td><%= @receiver.to_s%></td>
+        <td><%= link_to @receiver.to_s, receiver_path(@receiver), style: "color: black"%></td>
       </tr>
       <tr>
         <td><strong>Destination</strong></td>
