@@ -19,8 +19,6 @@ class ItinerariesController < ApplicationController
   def create
     @itinerary = Itinerary.create(itinerary_params)
     @itinerary.update(user_id: session[:current_user_id])
-    @receiver = @itinerary.receiver
-    session[:current_itinerary_id] = @itinerary.id
     @user = User.find(session[:current_user_id])
       redirect_to user_path(@user)
   end

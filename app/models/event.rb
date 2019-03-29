@@ -13,6 +13,12 @@ class Event < ApplicationRecord
     self.date + " " + self.time
   end
 
+  def correct_user?(params)
+    if self.user_id == params.to_i
+      return true
+    end
+  end
+
   def number_of_bookings
     self.bookings.count
   end
@@ -22,5 +28,16 @@ class Event < ApplicationRecord
     ratings.sum / ratings.length
   end
 
+  def alphabetized_event_names
+    self.names.sort
+  end
+
+  def highest_rating
+    self.ratings.max
+  end
+
+  def lowest_rating
+    self.ratings.min
+  end
 
 end

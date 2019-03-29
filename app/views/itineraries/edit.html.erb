@@ -1,3 +1,14 @@
+<div class="topnav">
+  <%= link_to "Home", user_path(current_user), class: "active"%>
+  <a href="/logout">Log Out</a>
+  <%= link_to "Back to Itinerary", itinerary_path %>
+  <%= link_to "Add New Receiver", new_receiver_path %>
+
+
+  <a href="#" style="float:left"><strong>XPERIENC</strong></a>
+</div>
+
+
 <div style="text-align: center">
 <h1><%= @itinerary.destination_name %> Itinerary</h1>
 </div>
@@ -87,7 +98,8 @@
     </div>
 </div>
 
-
+<br>
 <div style="text-align: center">
   <button type="button" class="btn btn-info btn-lg"><%= link_to 'Delete Itinerary',  { action: :destroy, id: @itinerary.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
 </div>
+<br>
