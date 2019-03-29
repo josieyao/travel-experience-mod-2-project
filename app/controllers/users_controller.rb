@@ -17,6 +17,11 @@ class UsersController < ApplicationController
     if !@identity
       redirect_to user_path(@user)
     end
+
+    # unless @user.logged_in?
+    #   flash[:error] = "You must be logged in to access this page."
+    #   redirect_to root_path
+    # end
   end
 
   def new
