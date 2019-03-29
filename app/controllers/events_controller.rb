@@ -1,10 +1,12 @@
 class EventsController < ApplicationController
   def index
-    @all = Event.all
+    @events = Event.all
+    @user = User.find(session[:current_user_id])
   end
 
   def show
     @event = Event.find(params[:id])
+    @user = User.find(session[:current_user_id])
   end
 
   def new
@@ -18,11 +20,13 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(session[:current_event_id])
+    @event = Event.find(params[:id])
+    @user = User.find(session[:current_user_id])
+    @itineraries = @user.itineraries
   end
 
   def update
-    @event = Event.find(session[:current_event_id])
+    @event = Event.find(params[:id])
     @event.update(event_params)
     redirect_to event_path(@event)
   end
@@ -33,6 +37,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :address, :description, :date, :time, :itinerary_id)
+    params.require(:event).permit(:name, :address, :description, :date, :time, :itinerary_id, :search)
   end
 end

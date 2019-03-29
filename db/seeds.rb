@@ -30,7 +30,7 @@ hawaii_itinerary = Itinerary.create(
   departure_date: '2019/04/01',
   departure_flight_time: '7:00AM',
   return_airport_code: 'HNL',
-  return_date: '2019/04/03',
+  return_date: '04/03/2019',
   return_flight_time: '8:00PM',
   user: josie,
   receiver: cory
@@ -46,6 +46,38 @@ hawaii_day2u = EventUser.create(event: pineapple_tour, user: josie)
 hawaii_day1u = EventUser.create(event: aloha_luau, user: josie)
 booking1 = Booking.create(event: aloha_luau, itinerary: hawaii_itinerary)
 booking2 = Booking.create(event: pineapple_tour, itinerary: hawaii_itinerary)
+
+#SAN FRANCISCO EXAMPLE
+charles = Receiver.create(first_name: 'Charles', last_name: 'Smith', email: 'charles@gmail.com')
+
+sf_itinerary = Itinerary.create(
+  destination_name: 'San Francisco',
+  destination_address: '200 San Francisco Street, San Francisco, CA 90002',
+  airline: 'American Airlines',
+  flight_number: 'B200',
+  gate_number: '10A',
+  seat_number: '1C',
+  departure_airport_code: 'LAX',
+  departure_date: '2019/04/05',
+  departure_flight_time: '7:00AM',
+  return_airport_code: 'SFO',
+  return_date: '04/07/2019',
+  return_flight_time: '8:00PM',
+  user: josie,
+  receiver: charles
+)
+
+union_square = Event.create(name: 'Union Square', address: '100 Union Square Street, San Francisco, CA 90002', description: 'Shop your heart out at the heart of San Francisco!', date: '2019/04/06', time: '1:00PM')
+
+golden_gate = Event.create(name: 'Golden Gate Bridge', address: '200 Golden Gate Road, San Francisco, CA 90002', description: 'Visit the the iconic bridge of San Francisco!', date: '2019/04/07', time: '12:00PM')
+
+sf_day1 = EventReceiver.create(event: union_square, receiver: charles, rating: 3)
+sf_day2 = EventReceiver.create(event: golden_gate, receiver: charles, rating:  5)
+sf_day2u = EventUser.create(event: union_square, user: josie)
+sf_day1u = EventUser.create(event: golden_gate, user: josie)
+sf_booking1 = Booking.create(event: union_square, itinerary: sf_itinerary)
+sf_booking2 = Booking.create(event: golden_gate, itinerary: sf_itinerary)
+
 
 #CALIFORNIA EXAMPLE
 sam = User.create(first_name: 'Sam', last_name: 'Smith', email: 'sammie@gmail.com', password: 'smith11')
@@ -63,7 +95,7 @@ cali_itinerary = Itinerary.create(
   departure_date: '2019/05/01',
   departure_flight_time: '9:00AM',
   return_airport_code: 'LAX',
-  return_date: '2019/05/02',
+  return_date: '05/02/2019',
   return_flight_time: '9:00PM',
   user: sam,
   receiver: jane
@@ -74,3 +106,8 @@ hollywood_tour = Event.create(name: 'Hollywood Walk of Fame Tour', address: '700
 cali_day1 = EventReceiver.create(event: hollywood_tour, receiver: jane, rating: 5)
 hawaii_day1u = EventUser.create(event: hollywood_tour, user: sam)
 booking1 = Booking.create(event: hollywood_tour, itinerary: cali_itinerary)
+
+#friendships
+friendship1 = Friendship.create(user: josie, receiver: cory)
+friendship2 = Friendship.create(user: sam, receiver: jane)
+friendship3 = Friendship.create(user: josie, receiver: charles)

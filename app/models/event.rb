@@ -9,10 +9,14 @@ class Event < ApplicationRecord
 
   validates :name, :address, :description, :time, presence: true
 
-  validates_format_of :date, :with => /\d{4}\/\d{2}\/\d{2}/, :message => "Date must be in the following format: yyyy/mm/dd"
-
   def d_t
     self.date + " " + self.time
+  end
+
+  def correct_user?(params)
+    if self.user_id == params.to_i
+      return true
+    end
   end
 
   def number_of_bookings
@@ -23,4 +27,17 @@ class Event < ApplicationRecord
     ratings = self.event_receivers.pluck(:rating)
     ratings.sum / ratings.length
   end
+
+  def alphabetized_event_names
+    self.names.sort
+  end
+
+  def highest_rating
+    self.ratings.max
+  end
+
+  def lowest_rating
+    self.ratings.min
+  end
+
 end

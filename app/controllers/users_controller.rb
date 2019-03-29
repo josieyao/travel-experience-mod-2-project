@@ -10,7 +10,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(session[:current_user_id])
-    unless @user.id == params[:id].to_i
+
+    @identity = @user.stolen_identity?(params[:id])
+    if !@identity
       redirect_to user_path(@user)
     end
   end
@@ -49,9 +51,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
   end
-
-  #def require_login
-  #  return head(:forbidden) unless session.include? :current_user_id
-  #end
 
 end
