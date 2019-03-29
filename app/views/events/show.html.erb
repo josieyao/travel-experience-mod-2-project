@@ -15,6 +15,11 @@
 <br>
 
 <div style="text-align: center">
+  <button type="button" class="btn btn-info"><%= link_to "See All Receivers Going", event_receivers_path(@event.id)%><br>
+</div>
+<br>
+
+<div style="text-align: center">
   <% if @event.users.include?(@user) %>
     <button type="button" class="btn btn-info">
   <%= link_to "Edit Event", edit_event_path(@event.id)%></button>
