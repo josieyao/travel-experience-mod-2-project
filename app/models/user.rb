@@ -24,12 +24,6 @@ class User < ApplicationRecord
     end
   end
 
-  # def logged_in?(params)
-  #   if self.find_by(email: params[:email]) && self.authenticate(params[:password]) == true
-  #     session[:current_user_id] = self.id
-  #   end
-  # end
-
   def my_itineraries
     self.itineraries
   end
