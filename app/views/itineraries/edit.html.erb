@@ -2,24 +2,6 @@
 <h1><%= @itinerary.destination_name %> Itinerary</h1>
 </div>
 
-<br>
-<div style="text-align: center">
-<u><h4>Receiver's Information</h4></u>
-</div>
-
-<div class="form-group col-lg-6">
-  <div style="text-align: center">
-    <FONT COLOR="0066ff"><h4><%= @receiver.to_s %></h4></FONT>
-    <FONT COLOR="0066ff"><h4><%= @receiver.email %></h4></FONT>
-  </div>
-</div>
-
-<div style="text-align: center">
-  <button type="button" class="btn btn-info"><%= link_to "Edit Receiver", edit_receiver_path(@receiver.id)%><br>
-</div>
-<br>
-
-
 <div class="container">
   <div class="row">
       <div class="col">
@@ -33,6 +15,12 @@
         <div>
           <%= form.label "Address" %>
           <%= form.text_field :destination_address, class: "form-control" %>
+        </div>
+        <br>
+
+        <div class="form-group col-lg-6">
+          <%= form.label "Receiver" %>
+          <%= form.collection_select :receiver_id, @user.receivers, :id, :first_name, class: "form-control" %>
         </div>
 
         <br>
@@ -72,7 +60,7 @@
 
         <div>
           <%= form.label "Departure Flight Time" %>
-          <%= form.text_field :departure_flight_time, class: "form-control" %>
+          <%= form.text_field :departure_flight_time, class: "form-control", type: "time" %>
         </div>
 
         <div>
@@ -82,12 +70,12 @@
 
         <div>
           <%= form.label "Return Date" %>
-          <%= form.text_field :return_date, value: :return_date, class: "form-control", type: "date"%>
+          <%= form.text_field :return_date, class: "form-control", type: "date"%>
         </div>
 
         <div>
           <%= form.label "Return Flight Time" %>
-          <%= form.text_field :return_flight_time, class: "form-control" %>
+          <%= form.text_field :return_flight_time, class: "form-control", type: "time" %>
         </div>
 
         <br>
@@ -97,4 +85,9 @@
         <% end %>
       </div>
     </div>
+</div>
+
+
+<div style="text-align: center">
+  <button type="button" class="btn btn-info btn-lg"><%= link_to 'Delete Itinerary',  { action: :destroy, id: @itinerary.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
 </div>

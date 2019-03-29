@@ -74,3 +74,7 @@ hollywood_tour = Event.create(name: 'Hollywood Walk of Fame Tour', address: '700
 cali_day1 = EventReceiver.create(event: hollywood_tour, receiver: jane, rating: 5)
 hawaii_day1u = EventUser.create(event: hollywood_tour, user: sam)
 booking1 = Booking.create(event: hollywood_tour, itinerary: cali_itinerary)
+
+#friendships
+friendship1 = Friendship.create(user: josie, receiver: cory)
+friendship2 = Friendship.create(user: sam, receiver: jane)

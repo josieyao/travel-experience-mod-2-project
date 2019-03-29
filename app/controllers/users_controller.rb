@@ -9,7 +9,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(session[:current_user_id])
-    unless @user.id == params[:id].to_i
+    # unless @user.id == params[:id].to_i
+    #   redirect_to user_path(@user)
+    # end
+
+    @identity = @user.stolen_identity?(params[:id])
+    if !@identity
       redirect_to user_path(@user)
     end
   end

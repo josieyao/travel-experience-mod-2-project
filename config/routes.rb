@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   resources :event_users
+  resources :friendships
   root 'sessions#new'
   get 'logout', to: 'sessions#destroy'
+  get '/itinerary/:id/delete', to: 'itineraries#destroy'
 end
