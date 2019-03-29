@@ -13,6 +13,7 @@ class ItinerariesController < ApplicationController
 
   def new
     @itinerary = Itinerary.new
+    @user = User.find(session[:current_user_id])
   end
 
   def create
@@ -20,12 +21,13 @@ class ItinerariesController < ApplicationController
     @itinerary.update(user_id: session[:current_user_id])
     @receiver = @itinerary.receiver
     session[:current_itinerary_id] = @itinerary.id
-    redirect_to new_receiver_path(@receiver)
+    @user = User.find(session[:current_user_id])
+      redirect_to user_path(@user)
   end
 
   def edit
     @itinerary = Itinerary.find(params[:id])
-    @receiver = @itinerary.receiver
+    @user = User.find(session[:current_user_id])
   end
 
   def update
@@ -35,7 +37,10 @@ class ItinerariesController < ApplicationController
   end
 
   def destroy
-
+    @user = User.find(session[:current_user_id])
+    @itinerary = Itinerary.find(params[:id])
+    @itinerary.destroy
+    redirect_to user_path(@user)
   end
 
   private

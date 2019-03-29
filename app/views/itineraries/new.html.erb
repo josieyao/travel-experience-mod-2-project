@@ -14,6 +14,12 @@
           <%= form.label "Address" %>
           <%= form.text_field :destination_address, class: "form-control" %>
         </div>
+        <br>
+
+        <div class="form-group col-lg-6">
+          <%= form.label "Receiver" %>
+          <%= form.collection_select :receiver_id, @user.receivers, :id, :first_name, class: "form-control" %>
+        </div>
 
         <br>
         <div style="text-align: center">
@@ -52,7 +58,7 @@
 
         <div class="form-group col-lg-6">
           <%= form.label "Departure Flight Time" %>
-          <%= form.text_field :departure_flight_time, class: "form-control" %>
+          <%= form.text_field :departure_flight_time, class: "form-control", type: "time" %>
         </div>
 
         <div class="form-group col-lg-6">
@@ -68,7 +74,7 @@
 
         <div class="form-group col-lg-6">
           <%= form.label "Return Flight Time" %>
-          <%= form.text_field :return_flight_time, class: "form-control" %>
+          <%= form.text_field :return_flight_time, class: "form-control", type: "time" %>
         </div>
 
         <br>
