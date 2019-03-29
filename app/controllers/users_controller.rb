@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :current_user, :only => [:new, :create]
 
   #before_action :require_login
 

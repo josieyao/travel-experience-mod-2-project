@@ -63,4 +63,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+#Asynchronous job scheduling
+gem 'delayed_job', '~> 4.1.5'
+#mail gem
 gem 'mail', '~> 2.6', '>= 2.6.4'

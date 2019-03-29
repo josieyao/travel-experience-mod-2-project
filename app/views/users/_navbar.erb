@@ -1,7 +1,8 @@
 <div class="topnav">
-  <%= link_to "Home", user_path(current_user), class: "active"%>
+
+  <%= link_to "Home", user_path(@current_user), class: "active"%>
   <a href="/logout">Log Out</a>
-  <%= link_to "Account Settings", edit_user_path(current_user) %>
+  <%= link_to "Account Settings", edit_user_path(@current_user) %>
   <%= link_to "All Events", events_path %>
   <%= link_to "Create Itinerary", new_itinerary_path %>
   <%= link_to "Create Receiver", new_receiver_path %>

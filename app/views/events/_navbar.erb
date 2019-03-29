@@ -1,7 +1,7 @@
 <div class="topnav">
-  <%= link_to "Home", user_path(current_user), class: "active"%>
+  <%= link_to "Home", user_path(@current_user), class: "active"%>
   <a href="/logout">Log Out</a>
-  <%= link_to "Account Settings", edit_user_path(current_user) %>
+  <%= link_to "Account Settings", edit_user_path(@current_user) %>
   <%= link_to "All Events", events_path %>
   <%= link_to "My Events", event_users_path %>
   <a href="#" style="float:left"><strong>XPERIENC</strong></a>
