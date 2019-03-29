@@ -23,16 +23,6 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @user = User.find(session[:current_user_id])
     @itineraries = @user.itineraries
-
-    # @event_user = EventUser.find(params[:id])
-    #
-    # @identity = @event.correct_user?(params[:id])
-    # if !@identity
-    #   flash[:error] = "You must be the authorized user to access this page."
-    #   redirect_to events_path
-    # else
-    #   redirect_to edit_events_path(@event)
-    # end
   end
 
   def update
