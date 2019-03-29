@@ -11,7 +11,7 @@
     <% @user.receivers.each_with_index do |e, i| %>
       <tr>
         <th scope="row"><%= i + 1 %></th>
-        <td><%= link_to e.to_s, receiver_path(e), style: "color: black" %></td>
+        <td><%= link_to e.to_s, events_path, style: "color: black" %></td>
       </tr>
     <% end %>
   </tbody>
