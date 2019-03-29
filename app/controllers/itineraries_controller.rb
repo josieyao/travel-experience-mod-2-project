@@ -45,11 +45,12 @@ class ItinerariesController < ApplicationController
     itinerary = Itinerary.find(params[:id])
     path = itinerary_url(itinerary)
     events = itinerary.events
+    user = itinerary.user
     mail = Mail.new do
       from     'do_not_reply@xperienc.com'
       to       'josiee.yao@gmail.com'
       subject  'Someone Sent You a Present!'
-      body     "Congratulations! #{@current_user.to_s} has paid all expenses for a trip to #{itinerary.destination_name}. Following is the link containing all of the information in regards to your trip: #{path}. Over the period of your trip you will receive emails in regard to the events that have been scheduled for you. Stay tuned!"
+      body     "Congratulations! #{user.to_s} has paid all expenses for a trip to #{itinerary.destination_name}. Following is the link containing all of the information in regards to your trip: #{path}. Over the period of your trip you will receive emails in regard to the events that have been scheduled for you. Stay tuned!"
     end
 
     mail.delivery_method :sendmail
