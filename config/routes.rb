@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :sessions
   root 'sessions#new'
   get 'logout', to: 'sessions#destroy'
+  get '/itineraries/:id/send_mail', to: 'itineraries#send_mail'
 end

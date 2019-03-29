@@ -1,7 +1,7 @@
 class ItinerariesController < ApplicationController
 
   def index
-    @itinerary = Itinerary.find(params[:id])
+
   end
 
   def show
@@ -36,6 +36,27 @@ class ItinerariesController < ApplicationController
 
   def destroy
 
+  end
+
+  def send_receiver_email
+    itinerary = Itinerary.find(params[:id])
+    path = itinerary_url(itinerary)
+    mail = Mail.new do
+      from     'do_not_reply@xperienc.com'
+      to       'zepher2211@gmail.com'
+      subject  'Someone Sent You a Present!'
+      body     "Congratulations! #{@current_user.to_s} has paid all expenses for a trip to #{itinerary.destination}. Following is the link containing all of the information in regards to your trip: #{path}. Over the period of your trip you will receive emails in regard to the events that have been scheduled for you. Stay tuned!"
+    end
+
+    mail.delivery_method :sendmail
+
+    mail.deliver
+  end
+
+  def send_mail
+    @itinerary = Itinerary.find(params[:id])
+    send_receiver_email
+    redirect_to itinerary_path(@itinerary)
   end
 
   private
