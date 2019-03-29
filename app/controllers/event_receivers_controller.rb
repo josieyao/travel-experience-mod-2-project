@@ -1,6 +1,8 @@
 class EventReceiversController < ApplicationController
   def index
-    @event_receiver = EventReceiver.find(session[:current_event_receiver_id])
+    @event_receivers = EventReceiver.all
+    @user = User.find(session[:current_user_id])
+    # @event = Event.find(params[:id])
   end
 
   def show

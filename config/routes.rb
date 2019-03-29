@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy'
   get '/itineraries/:id/send_mail', to: 'itineraries#send_mail'
   get '/itinerary/:id/delete', to: 'itineraries#destroy'
+  # get '/events/:id/receivers', to: 'event_receivers#index'
 end
