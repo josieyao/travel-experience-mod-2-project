@@ -67,3 +67,4 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'delayed_job', '~> 4.1.5'
 #mail gem
 gem 'mail', '~> 2.6', '>= 2.6.4'
+gem 'delayed_job_active_record'
