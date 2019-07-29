@@ -7,7 +7,7 @@ class ReceiverMailer < ApplicationMailer
       path = event_url(event)
       mail = Mail.new do
         from     'do_not_reply@xperienc.com'
-        to       'zepher2211@gmail.com'
+        to       'josiee.yao@gmail.com'
         subject  'Upcoming Event!'
         body     "Hi #{receiver.to_s}, you've been scheduled to go to #{event.name}. Following is the link to the event details: #{path}"
       end
